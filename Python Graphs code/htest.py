@@ -9,10 +9,10 @@ algo1 = pd.read_csv(file1)
 algo2 = pd.read_csv(file2)
 algo3 = pd.read_csv(file3)
 # Perform ANOVA for Execution Time across different algorithms
-execution_time_anova = stats.f_oneway(algo1['Execution Time'], algo2['Execution Time'], algo3['Execution Time'])
-
+execution_time_anova = stats.f_oneway(algo1['Execution Time'],algo3['Execution Time'])
+print(execution_time_anova)
 # # Perform ANOVA for Path Optimality across different algorithms
- path_optimality_anova = stats.f_oneway(algo1['optimality'], algo2['optimality'], algo3['optimality'])
+path_optimality_anova = stats.f_oneway(algo1['optimality'], algo2['optimality'], algo3['optimality'])
 
 # Display p-values for both tests
 print(f"ANOVA for Execution Time: p-value = {execution_time_anova.pvalue}")
